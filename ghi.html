@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackOdisha 5.0 Clone</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3e6ff; /* A light purple background */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Custom 3D shadow for the apply button */
+        .btn-shadow-hard {
+            box-shadow: 8px 8px 0px #000;
+            transition: all 0.15s ease-out;
+        }
+        .btn-shadow-hard:hover {
+            box-shadow: 4px 4px 0px #000;
+            transform: translate(4px, 4px);
+        }
+        
+        /* Custom border for the main banner */
+        .hero-banner-border {
+            box-shadow: 0 0 0 4px #a855f7, 0 0 0 12px #000000;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="absolute top-0 left-0 right-0 z-30 flex justify-center pt-6">
+        <nav class="w-full max-w-5xl mx-auto flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-lg">
+            <!-- Logo SVG -->
+            <a href="#" class="flex items-center space-x-1">
+                <svg width="150" height="30" viewBox="0 0 150 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="24" font-family="'Inter', sans-serif" font-weight="900" font-size="24" fill="black">HACK</text>
+                    <text x="75" y="24" font-family="'Inter', sans-serif" font-weight="900" font-size="24" fill="black">5</text>
+                    <text x="0" y="12" font-family="'Inter', sans-serif" font-weight="900" font-size="10" fill="black" transform="translate(0 15)">ODISHA</text>
+                    <!-- Simple graphic approximation -->
+                    <path d="M70 5 L70 25" stroke="black" stroke-width="2"/>
+                </svg>
+            </a>
+
+            <!-- Nav Links -->
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="#" class="text-gray-700 font-semibold hover:text-purple-600">Home</a></li>
+                <li><a href="#" class="text-gray-700 font-semibold hover:text-purple-600">About us</a></li>
+                <li><a href="#" class="text-gray-700 font-semibold hover:text-purple-600">Contact us</a></li>
+                <li><a href="#" class="text-gray-700 font-semibold hover:text-purple-600">Timeline</a></li>
+            </ul>
+
+            <!-- Join Discord Button -->
+            <a href="#" class="flex items-center space-x-2 px-5 py-2.5 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
+                <!-- Discord Icon SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.27 5.33C17.94 4.7 16.5 4.26 15 4V4C15 4 14.89 4.2 14.83 4.41C13.5 4.1 12.14 4.09 10.79 4.41C10.73 4.2 10.62 4 10.62 4H10.59C8.97 4.26 7.5 4.7 6.17 5.33C3.86 9.09 3.5 13.28 5.1 17.13C5.1 17.13 6.17 18.09 7.21 18.83C7.22 18.84 7.24 18.85 7.25 18.86C7.94 18.39 8.6 17.88 9.22 17.31C9.11 17.21 9 17.1 8.89 17C8.23 16.5 7.63 15.93 7.12 15.3C7.12 15.3 7.11 15.29 7.11 15.29C7.1 15.28 7.09 15.27 7.08 15.26C7.08 15.26 7.08 15.26 7.08 15.26C6.5 14.38 6.07 13.42 5.8 12.39C5.79 12.33 5.79 12.27 5.79 12.21C5.79 12.15 5.8 12.09 5.8 12.03C5.81 11.98 5.81 11.92 5.82 11.87C6.39 10.11 7.7 8.5 9.76 7.29C10.27 6.9 10.82 6.55 11.4 6.25C11.4 6.25 11.4 6.25 11.41 6.25C11.43 6.24 11.45 6.23 11.47 6.22C11.82 6.07 12.17 5.93 12.52 5.8C12.52 5.8 12.53 5.8 12.53 5.8C12.78 5.7 13.03 5.61 13.27 5.51C13.31 5.5 13.34 5.48 13.38 5.47C13.63 5.37 13.89 5.28 14.15 5.2C14.16 5.2 14.16 5.2 14.17 5.19C14.41 5.12 14.65 5.06 14.88 5C14.92 4.99 14.95 4.99 14.99 4.98C15 4.98 15 4.98 15 4.98C15 4.98 15 4.98 15 4.98C15 4.98 15 4.98 15.01 4.98C15.01 4.98 15.01 4.98 15.01 4.98C15.26 4.94 15.5 4.9 15.75 4.87C16.14 4.82 16.54 4.79 16.94 4.77C17.33 4.75 17.72 4.75 18.11 4.77C18.51 4.79 18.91 4.82 19.3 4.87C19.55 4.9 19.79 4.94 20.04 4.98C20.04 4.98 20.05 4.98 20.05 4.98C20.08 4.99 20.12 4.99 20.15 5C20.39 5.06 20.62 5.12 20.86 5.19C20.87 5.2 20.87 5.2 20.88 5.2C21.14 5.28 21.4 5.37 21.65 5.47C21.68 5.48 21.72 5.5 21.75 5.51C22 5.61 22.25 5.7 22.5 5.8C22.51 5.8 22.51 5.8 22.51 5.8C22.86 5.93 23.22 6.07 23.56 6.22C23.58 6.23 23.6 6.24 23.62 6.25C23.62 6.25 23.62 6.25 23.62 6.25C24.2 6.55 24.75 6.9 25.26 7.29C27.32 8.5 28.63 10.11 29.2 11.87C29.21 11.92 29.21 11.98 29.22 12.03C29.22 12.09 29.23 12.15 29.23 12.21C29.23 12.27 29.23 12.33 29.22 12.39C28.95 13.42 28.52 14.38 27.92 15.26C27.92 15.26 27.92 15.26 27.92 15.26C27.91 15.27 27.9 15.28 27.89 15.29C27.89 15.29 27.88 15.3 27.88 15.3C27.37 15.93 26.77 16.5 26.11 17C26 17.1 25.89 17.21 25.78 17.31C26.4 17.88 27.06 18.39 27.75 18.86C27.76 18.85 27.78 18.84 27.79 18.83C28.83 18.09 29.9 17.13 29.9 17.13C31.5 13.28 31.14 9.09 28.83 5.33L28.79 5.27C27.47 4.7 26.02 4.26 24.47 4V4C24.47 4 24.36 4.2 24.3 4.41C22.97 4.1 21.61 4.09 20.26 4.41C20.2 4.2 20.09 4 20.09 4H20.06C18.44 4.26 16.97 4.7 15.64 5.33L15.6 5.27C14.27 4.7 12.82 4.26 11.27 4V4C11.27 4 11.16 4.2 11.1 4.41C9.77 4.1 8.41 4.09 7.06 4.41C7 4.2 6.89 4 6.89 4H6.86C5.24 4.26 3.77 4.7 2.44 5.33L2.4 5.27C4.71 9.09 5.06 13.28 3.46 17.13C3.46 17.13 4.53 18.09 5.57 18.83C5.58 18.84 5.6 18.85 5.61 18.86C6.3 18.39 6.96 17.88 7.58 17.31C7.47 17.21 7.36 17.1 7.25 17C6.59 16.5 5.99 15.93 5.48 15.3C5.48 15.3 5.47 15.29 5.47 15.29C5.46 15.28 5.45 15.27 5.44 15.26C5.44 15.26 5.44 15.26 5.44 15.26C4.86 14.38 4.43 13.42 4.16 12.39C4.15 12.33 4.15 12.27 4.15 12.21C4.15 12.15 4.16 12.09 4.16 12.03C4.17 11.98 4.17 11.92 4.18 11.87C4.75 10.11 6.06 8.5 8.12 7.29C8.63 6.9 9.18 6.55 9.76 6.25C9.76 6.25 9.76 6.25 9.77 6.25C9.79 6.24 9.81 6.23 9.83 6.22C10.18 6.07 10.53 5.93 10.88 5.8C10.88 5.8 10.89 5.8 10.89 5.8C11.14 5.7 11.39 5.61 11.63 5.51C11.67 5.5 11.7 5.48 11.74 5.47C11.99 5.37 12.25 5.28 12.51 5.2C12.52 5.2 12.52 5.2 12.53 5.19C12.77 5.12 13.01 5.06 13.24 5C13.28 4.99 13.31 4.99 13.35 4.98C13.36 4.98 13.36 4.98 13.36 4.98C13.36 4.98 13.36 4.98 13.36 4.98C13.36 4.98 13.37 4.98 13.37 4.98C13.62 4.94 13.86 4.9 14.11 4.87C14.5 4.82 14.9 4.79 15.3 4.77C15.69 4.75 16.08 4.75 16.47 4.77C16.87 4.79 17.27 4.82 17.66 4.87C17.91 4.9 18.15 4.94 18.4 4.98C18.4 4.98 18.41 4.98 18.41 4.98C18.44 4.99 18.48 4.99 18.51 5C18.75 5.06 18.98 5.12 19.22 5.19C19.23 5.2 19.23 5.2 19.24 5.2C19.5 5.28 19.76 5.37 20.01 5.47C20.04 5.48 20.08 5.5 20.11 5.51C20.36 5.61 20.61 5.7 20.86 5.8C20.87 5.8 20.87 5.8 20.87 5.8C21.22 5.93 21.58 6.07 21.92 6.22C21.94 6.23 21.96 6.24 21.98 6.25C21.98 6.25 21.98 6.25 21.98 6.25C22.56 6.55 23.11 6.9 23.62 7.29C25.68 8.5 26.99 10.11 27.56 11.87C27.57 11.92 27.57 11.98 27.58 12.03C27.58 12.09 27.59 12.15 27.59 12.21C27.59 12.27 27.59 12.33 27.58 12.39C27.31 13.42 26.88 14.38 26.28 15.26C26.28 15.26 26.28 15.26 26.28 15.26C26.27 15.27 26.26 15.28 26.25 15.29C26.25 15.29 26.24 15.3 26.24 15.3C25.73 15.93 25.13 16.5 24.47 17C24.36 17.1 24.25 17.21 24.14 17.31C24.76 17.88 25.42 18.39 26.11 18.86C26.12 18.85 26.14 18.84 26.15 18.83C27.19 18.09 28.26 17.13 28.26 17.13C29.86 13.28 29.5 9.09 27.19 5.33L27.15 5.27C25.82 4.7 24.37 4.26 22.83 4V4Z" transform="scale(0.8) translate(-2, -4)"/>
+                </svg>
+                <span>Join Discord</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative pt-48 pb-32 flex flex-col items-center justify-center z-10">
+        
+        <!-- Hanging Line -->
+        <div class="absolute top-20 left-1/2 -ml-0.5 w-0.5 h-32 bg-white z-0"></div>
+
+        <!-- Hero Banner -->
+        <div class="relative w-full max-w-4xl">
+            <div class="relative bg-purple-200 border-4 border-purple-600 rounded-3xl p-4 hero-banner-border">
+                <div class="py-12 px-6 text-center">
+                    <h1 class="text-6xl sm:text-8xl md:text-9xl font-black text-black tracking-tighter">
+                        HACK ODISHA
+                    </h1>
+                    <p class="mt-4 text-2xl sm:text-3xl font-semibold text-black">
+                        06-07th ,September 2025
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5.0 Badge -->
+            <div class="absolute -bottom-8 -right-4 sm:-right-8 bg-white border-4 border-black rounded-xl px-6 py-3">
+                <span class="text-5xl font-black text-black">5.0</span>
+            </div>
+        </div>
+
+        <!-- Apply Button Container -->
+        <div class="relative mt-24 z-20">
+            
+            <!-- Cartoon Hand SVG -->
+            <div class="absolute -top-24 left-1/2 -translate-x-1/3 w-32">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M63.5 67.4111C63.5 67.4111 72.8333 65.5 76 65.5C79.1667 65.5 83.3 67.9111 83.5 71.9111C83.7 75.9111 81 78.5 78.5 79.5C76 80.5 65.1667 80.4111 63.5 80.4111M63.5 67.4111V80.4111M63.5 67.4111H44.5V47.9111C44.5 47.9111 44.5 41.9111 48 41.9111C51.5 41.9111 53 47.4111 53 47.4111V64.9111M63.5 80.4111H49.5V66.9111H63.5M36.5 44.9111C36.5 44.9111 36 38.9111 39.5 38.9111C43 38.9111 44.5 44.9111 44.5 44.9111V64.9111M33 3.41107C33 3.41107 43.5 -2.08893 50.5 3.41107C57.5 8.91107 54.5 19.9111 54.5 19.9111L33 19.4111C33 19.4111 26 8.91107 33 3.41107Z" fill="white" stroke="black" stroke-width="3"/>
+                    <path d="M44.5 64.9111V47.9111C44.5 47.9111 44.5 41.9111 48 41.9111C51.5 41.9111 53 47.4111 53 47.4111V64.9111M44.5 64.9111H39.5M44.5 64.9111H53M39.5 64.9111V44.9111C39.5 44.9111 39 38.9111 42.5 38.9111C46 38.9111 47.5 44.9111 47.5 44.9111V64.9111" stroke="black" stroke-width="3"/>
+                </svg>
+            </div>
+            
+            <!-- Apply with Devfolio Button -->
+            <a href="#" class="flex items-center space-x-3 px-8 py-4 bg-yellow-300 border-2 border-black rounded-xl btn-shadow-hard">
+                <!-- Devfolio Icon SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0L24 12L12 24L0 12L12 0ZM5.636 12L12 18.364L18.364 12L12 5.636L5.636 12Z" fill="black"/>
+                </svg>
+                <span class="text-xl font-bold text-black">Apply with Devfolio</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Floating Decorative Elements -->
+    
+    <!-- Laptop Cartoon -->
+    <div class="absolute top-1/2 -translate-y-1/2 left-4 sm:left-12 md:left-24 w-32 sm:w-48 z-0">
+        <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 120H180V130H20V120Z" fill="#a855f7"/> <!-- Base bottom -->
+            <path d="M10 110H190V120H10V110Z" fill="#c084fc"/> <!-- Base top -->
+            <path d="M10 110L30 20H170L190 110H10Z" fill="#e9d5ff" stroke="black" stroke-width="3"/> <!-- Screen back -->
+            <rect x="40" y="30" width="120" height="70" fill="white" stroke="black" stroke-width="3" rx="5"/> <!-- Screen -->
+            <rect x="25" y="115" width="150" height="10" fill="#fde047" stroke="black" stroke-width="3" rx="3"/> <!-- Keyboard area -->
+            
+            <!-- Face -->
+            <circle cx="85" cy="65" r="5" fill="black"/>
+            <circle cx="115" cy="65" r="5" fill="black"/>
+            <path d="M90 80 Q100 90 110 80" stroke="black" stroke-width="3" fill="none"/> <!-- Smile -->
+            
+             <!-- Cheeks -->
+            <circle cx="70" cy="75" r="7" fill="#fbcfe8"/>
+            <circle cx="130" cy="75" r="7" fill="#fbcfe8"/>
+        </svg>
+    </div>
+
+    <!-- Screen/Book Cartoon -->
+    <div class="absolute bottom-24 right-4 sm:right-12 md:right-32 w-28 sm:w-40 z-20">
+        <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="130" height="100" fill="#e9d5ff" stroke="black" stroke-width="3" rx="10"/> <!-- Screen -->
+            <rect x="25" y="25" width="100" height="70" fill="white" stroke="black" stroke-width="3" rx="5"/> <!-- Inner screen -->
+            
+            <!-- Face -->
+            <circle cx="60" cy="60" r="5" fill="black"/>
+            <circle cx="90" cy="60" r="5" fill="black"/>
+            <path d="M65 80 Q75 75 85 80" stroke="black" stroke-width="3" fill="none"/> <!-- Mouth -->
+
+            <!-- Stand -->
+            <path d="M75 110V140" stroke="black" stroke-width="3"/>
+            <path d="M50 140H100" stroke="black" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Eyebrows -->
+            <path d="M50 45 Q60 40 70 45" stroke="black" stroke-width="3" fill="none"/>
+            <path d="M80 45 Q90 40 100 45" stroke="black" stroke-width="3" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- "I'M A DEVELOPER" Badge -->
+    <div class="absolute bottom-16 left-4 sm:left-12 md:left-24 z-20">
+        <div class="px-5 py-2.5 bg-purple-600 text-white font-semibold rounded-full transform -rotate-12 shadow-lg">
+            I'M A DEVELOPER
+        </div>
+    </div>
+
+    <!-- Bottom Background Shape -->
+    <div class="absolute bottom-0 left-0 w-full h-48 md:h-72 z-0 overflow-hidden">
+        <svg class="w-full h-full" viewBox="0 0 1440 288" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 288C0 288 360 144 720 144C1080 144 1440 288 1440 288V0H0V288Z" fill="#e9d5ff"/>
+        </svg>
+    </div>
+
+</body>
+</html>
